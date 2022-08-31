@@ -1,6 +1,9 @@
 from flask_restx import Namespace, Resource
 from flask import request
+
+from project.auth_decorator import login_required
 from project.container import user_service
+from project.services import UsersService
 from project.setup.api.models import user
 
 api = Namespace('auth')
