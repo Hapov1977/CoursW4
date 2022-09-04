@@ -3,6 +3,7 @@ from flask import request
 
 from project.auth_decorator import login_required
 from project.container import user_service
+from project.jwt_token import JwtToken
 from project.services import UsersService
 from project.setup.api.models import user
 
@@ -39,3 +40,11 @@ class LoginView(Resource):
         else:
             return "Чего то не хватает", 401
 
+jwt_token = JwtToken({'id': 1, 'email': 'test@test.com'}}
+jwt_token.get_tokens()
+{'access_token': '123123123', 'refresh_token': ...}
+
+jwt_token.access_token
+'123123123'
+JwtToken.decode(jwt_token)
+{'id': 1, 'email': 'test@test.com'}
