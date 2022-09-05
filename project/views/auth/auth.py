@@ -40,7 +40,7 @@ class LoginView(Resource):
         else:
             return "Чего то не хватает", 401
 
-jwt_token = JwtToken({'id': 1, 'email': 'test@test.com'}}
+jwt_token = JwtToken({'id': 1, 'email': 'test@test.com'})
 jwt_token.get_tokens()
 {'access_token': '123123123', 'refresh_token': ...}
 
